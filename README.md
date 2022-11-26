@@ -7,4 +7,4 @@ Test-Driven Developement is a technique for building software incremenatlly. sim
 
 ### RED  GREEN REFACTOR
 The rhythm of tdd is refferd  to as _Red-Green-Refactor._
-![rumbling-about-test-driven-development](https://user-images.githubusercontent.com/98380527/203617797-2ecde856-e67c-44a8-a632-329ee0d74849.jpeg=100x200)
+![rumbling-about-test-driven-development](https://user-images.githubusercontent.com/98380527/203617797-2ecde856-e67c-44a8-a632-329ee0d74849.jpeg =100x200)
