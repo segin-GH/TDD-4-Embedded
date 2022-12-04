@@ -25,7 +25,8 @@ just as with any  skills.  ttd skills take time to develope. Many devs have adop
 
 A unit test harness is a software package that allows a programmer
 to experss how production code should behave.
- output of a Test Harness  `unity`
+
+output of a Test Harness  `unity`
 ```
  Running sprintf...
 ../main/main.c:14:sprintf:FAIL: Expected 4 Was 3
