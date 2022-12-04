@@ -9,3 +9,12 @@ Test-Driven Developement is a technique for building software incremenatlly. sim
 The rhythm of tdd is refferd  to as _Red-Green-Refactor._
 
 ![rumbling-about-test-driven-development](https://user-images.githubusercontent.com/98380527/203617797-2ecde856-e67c-44a8-a632-329ee0d74849.jpeg)
+
+### TDD Benefits
+just as with any  skills.  ttd skills take time to develope. Many devs have adopted would not go back to debug-later programing 
+
+- `Fewer bugs`
+- `Less debug time`
+- `Documentaion that dies not lie`
+- `Improved design`
+- `Fun and rewarding`
