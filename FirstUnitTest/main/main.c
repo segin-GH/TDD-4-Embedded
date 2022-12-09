@@ -45,5 +45,4 @@ TEST_CASE("Test 3", "Test for sprintf")
     TEST_ASSERT_EQUAL(3, sprintf(output, "hey"));
     TEST_ASSERT_EQUAL_STRING("hey", output);
     TEST_ASSERT_BYTES_EQUAL(0xaa,output[4]);
-    // TEST_ASSERT_BYTES_EQUAL
 }
