@@ -10,5 +10,11 @@
     ],
     "idf.port": "/dev/ttyUSB0",
     "idf.pythonBinPath": "/home/bot/esp/esp-idf/tools/python_env/idf4.4_py3.8_env/bin/python",
-    "idf.toolsPath": "/home/bot/esp/esp-idf/tools"
+    "idf.toolsPath": "/home/bot/esp/esp-idf/tools",
+    "files.associations": {
+        "unity.h": "c",
+        "unity_fixture.h": "c",
+        "string.h": "c",
+        "stdio.h": "c"
+    }
 }
