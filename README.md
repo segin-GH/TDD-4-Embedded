@@ -55,3 +55,6 @@ TEST_CASE("Test 1", "Test for sprintf")
 1 Tests 1 Failures 0 Ignored 
 FAIL
 ```
+
+For more examples on how to write tests like the above check [FirstUnitTest](https://github.com/segin-GH/TDD-4-Embedded/tree/main/FirstUnitTest) 
+
