@@ -61,7 +61,6 @@ For more examples of how to write tests like the above check [FirstUnitTest](htt
 
 >**NOTE:** It's a judgment call on how far to take tests. you will see when we get into TDD  how to decide which test to write
 
-With these kinds of tests you can see that some subtle duplication
-creeping into the test for eg `ouput[x]=""`  in every test case there is `output[x]=""` to avoid this we can use something called _test fixture_.
+With these kinds of tests written in [FirstUnitTest](https://github.com/segin-GH/TDD-4-Embedded/tree/main/FirstUnitTest)  you can see that some subtle duplication creeping into the test for eg `ouput[x]=""`  in every test case there is `output[x]=""` to avoid this we can use something called _test fixture_.
 
 ### Test Fixtures in Unity
