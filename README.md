@@ -9,3 +9,49 @@ Test-Driven Developement is a technique for building software incremenatlly. sim
 The rhythm of tdd is refferd  to as _Red-Green-Refactor._
 
 ![rumbling-about-test-driven-development](https://user-images.githubusercontent.com/98380527/203617797-2ecde856-e67c-44a8-a632-329ee0d74849.jpeg)
+
+### TDD Benefits
+just as with any  skills.  ttd skills take time to develope. Many devs have adopted would not go back to debug-later programing 
+
+- `Fewer bugs`
+- `Less debug time`
+- `Documentaion that dies not lie`
+- `Improved design`
+-  `Fun and rewarding`
+
+## Test-Driving tools and Conventions
+
+### Unit Test Harness
+
+A unit test harness is a software package that allows a programmer
+to experss how production code should behave.
+
+_*An example of a Test Harness  `unity`*_
+
+```
+#include <stdio.h>
+#include <unity.h>
+
+void app_main(void)
+{
+    UNITY_BEGIN();
+    unity_run_test_by_name("Test 1");
+    UNITY_END();
+}
+
+TEST_CASE("Test 1", "Test for sprintf")
+{
+    char output[5];
+    TEST_ASSERT_EQUAL(4, sprintf(output, "hey")); // Test ment to fail
+    TEST_ASSERT_EQUAL_STRING("hey", output);
+}
+```
+
+```
+ Running sprintf...
+../main/main.c:14:sprintf:FAIL: Expected 4 Was 3
+
+-----------------------
+1 Tests 1 Failures 0 Ignored 
+FAIL
+```
