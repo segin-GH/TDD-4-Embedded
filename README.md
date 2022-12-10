@@ -9,6 +9,9 @@ Test-Driven Development is a technique for building software incrementally. simp
 The rhythm of TDD is referred to as _Red-Green-Refactor._
 
 ```mermaid
+
+%%{init: {'theme': 'default', "flowchart" : { "curve" : "basis" } } }%%
+
 graph TD;
 RED-->GREEN-->REFACTOR-->RED
 ```
