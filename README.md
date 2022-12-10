@@ -64,6 +64,6 @@ For more examples of how to write tests like the above check [FirstUnitTest](htt
 With these kinds of tests written in [FirstUnitTest](https://github.com/segin-GH/TDD-4-Embedded/tree/main/FirstUnitTest/main/main.c)  you can see that some subtle duplication creeping into the test for eg `ouput[x]=""`  in every test case there is `output[x]=""` to avoid this we can use something called _test fixture_.
 
 ### Test Fixtures in Unity
-an example of a test fixture can be found at [TestFixtures](https://github.com/segin-GH/TDD-4-Embedded/blob/main/testFixtures/main/main.c)
+An example of a test fixture can be found at [TestFixtures](https://github.com/segin-GH/TDD-4-Embedded/blob/main/testFixtures/main/main.c)
 Duplication reduction is the motivation for test fixtures it may not be 
 noticeable in small tests but in larger tests, it can simplify your tests
