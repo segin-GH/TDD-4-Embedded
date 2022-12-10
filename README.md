@@ -10,13 +10,12 @@ The rhythm of TDD is referred to as _Red-Green-Refactor._
 
 ```mermaid
 
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0000', 'edgeLabelBackground':'#ffffee', 'tertiaryColor': '#fff0f0'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0000', 'edgeLabelBackground':'#ffffee','fontSize':'  28px', 'tertiaryColor': '#fff0f0'}}}%%
 
-graph TD;
+graph LR;
 RED-->GREEN-->REFACTOR-->RED
 ```
 
-![rumbling-about-test-driven-development](https://user-images.githubusercontent.com/98380527/203617797-2ecde856-e67c-44a8-a632-329ee0d74849.jpeg)
 
 ### TDD Benefits
 just as with any skills.  TDD skills take time to develop. Many devs have adopted would not go back to debug-later programming 
