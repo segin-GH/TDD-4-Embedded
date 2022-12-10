@@ -66,4 +66,4 @@ With these kinds of tests written in [FirstUnitTest](https://github.com/segin-GH
 ### Test Fixtures in Unity
 An example of a test fixture can be found at [TestFixtures](https://github.com/segin-GH/TDD-4-Embedded/blob/main/testFixtures/main/main.c)
 Duplication reduction is the motivation for test fixtures it may not be 
-noticeable in small tests but in larger tests, it can simplify your tests
+noticeable in small tests but in larger tests, it can simplify your tests.
