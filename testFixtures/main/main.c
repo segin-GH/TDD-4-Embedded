@@ -3,34 +3,21 @@
 #include <unity.h>
 #include <unity_fixture.h>
 
-/**
- *  @brief way to write test in test fixtures
- */
-
-
 static char output[100];
 static const char *expected;
 
 TEST_GROUP(TEST_1);
-
-/**
- *  @brief similar to a constructor
- */
+/* similar to constructor */
 TEST_SETUP(TEST_1)
 {
     memset(output,0xaa, sizeof output);
     expected ="";
 }
 
-/**
- *  @brief similar to a deconstructor 
- */
+/* similar to deconstructor */
 TEST_TEAR_DOWN(TEST_1){}
 
-/**
- *  @brief tests for sprintf
- */
-
+/* tests for sprintf */
 TEST(TEST_1,noFormatOperation)
 {
     char output[5] = "";
@@ -45,26 +32,20 @@ TEST(TEST_1,insertString)
     TEST_ASSERT_EQUAL_STRING("Hello world\n", output);
 }
 
-/**
- *  @brief grups all similar tests
- */
+/* merging similar types of test */
 TEST_GROUP_RUNNER(TEST_1)
 {
     RUN_TEST_CASE(TEST_1,noFormatOperation);
     RUN_TEST_CASE(TEST_1,insertString);
 }
 
-/**
- *  @brief a func that runs all the tests
- */
+/* where all tests are called */
 static void run_all_tests(void)
 {
     RUN_TEST_GROUP(TEST_1);
 }
 
-/** 
- * @brief calling tests in main
- */
+/* where tests are called */
 void app_main(void)
 {
     UNITY_MAIN_FUNC(run_all_tests);
