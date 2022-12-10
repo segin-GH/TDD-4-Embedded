@@ -10,7 +10,7 @@ The rhythm of TDD is referred to as _Red-Green-Refactor._
 
 ```mermaid
 
-%%{init: {'theme': 'default', "flowchart" : { "curve" : "basis" } } }%%
+%%{init: {'theme': 'forest', "flowchart" : { "curve" : "basis" } } }%%
 
 graph TD;
 RED-->GREEN-->REFACTOR-->RED
