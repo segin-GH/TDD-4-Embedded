@@ -2,7 +2,6 @@
 #include <string.h>
 #include <unity.h>
 #include <unity_fixture.h>
-#include "unity_fixture_extras.h"
 
 
 TEST_GROUP(TEST_1);
