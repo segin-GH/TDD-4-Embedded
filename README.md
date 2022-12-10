@@ -12,7 +12,7 @@ The rhythm of TDD is referred to as _Red-Green-Refactor._
 
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0000', 'edgeLabelBackground':'#ffffee','fontSize':'  28px', 'tertiaryColor': '#fff0f0'}}}%%
 
-graph LR;
+graph RL;
 RED-->GREEN-->REFACTOR-->RED
 ```
 
