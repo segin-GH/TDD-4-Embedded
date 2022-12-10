@@ -10,7 +10,7 @@ The rhythm of TDD is referred to as _Red-Green-Refactor._
 
 ```mermaid
 
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0000', 'edgeLabelBackground':'#ffffee','fontSize':'  30px', 'tertiaryColor': '#fff0f0'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0000', 'edgeLabelBackground':'#ffffee','fontSize':'30px', 'tertiaryColor': '#fff0f0'}}}%%
 
 graph LR;
 RED-->GREEN-->REFACTOR-->RED
@@ -74,3 +74,5 @@ With these kinds of tests written in [FirstUnitTest](https://github.com/segin-GH
 An example of a test fixture can be found at [TestFixtures](https://github.com/segin-GH/TDD-4-Embedded/blob/main/testFixtures/main/main.c)
 Duplication reduction is the motivation for test fixtures it may not be 
 noticeable in small tests but in larger tests, it can simplify your tests.
+
+>_Those who want really reliable software will discover that they must find means of avoiding the majority of bugs to start with, and as a result the programming process will become cheaper. If you want more effective programmers, you will discover that they should not waste their time debugging, they should not introduce the bugs to start with._		 - **Edsger W. Dijkstra**    _"The Humble Programmer"_  	
