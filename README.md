@@ -76,3 +76,11 @@ Duplication reduction is the motivation for test fixtures it may not be
 noticeable in small tests but in larger tests, it can simplify your tests.
 
 >_Those who want really reliable software will discover that they must find means of avoiding the majority of bugs to start with, and as a result the programming process will become cheaper. If you want more effective programmers, you will discover that they should not waste their time debugging, they should not introduce the bugs to start with._		 - **Edsger W. Dijkstra**    _"The Humble Programmer"_  	
+
+### The Four-phase Test Pattern
+The goal of using a test pattern are to create a concise, readable, and well-structured tests. if you follow this pattern  the test readers  can quickily determine what is being tested.
+
+- `setup : Establish the precodictions to the test`
+- `Exercise : Do something to the system`
+- `Verify : Check the expected outcome`
+- `Cleanup : return the system under test to its initial state`
