@@ -75,6 +75,20 @@ An example of a test fixture can be found at [TestFixtures](https://github.com/s
 Duplication reduction is the motivation for test fixtures it may not be 
 noticeable in small tests but in larger tests, it can simplify your tests.
 
+Unity test fixture is a testing framework for the C programming language that allows for the creation and organization of unit tests. It provides a set of functions and macros for defining and running tests, as well as for asserting the expected behavior of the code being tested.
+
+The TEST_GROUP macro is used to define a group of related test cases. Each test group has its own setup and tear-down functions that are run before and after each test in the group, respectively. This allows for common setup and cleanup operations to be performed for all tests in the group.
+
+The TEST_SETUP and TEST_TEAR_DOWN macros are used to define the setup and tear-down functions for a test group. These functions are run before and after each test in the group, respectively.
+
+The TEST macro is used to define an individual test case within a test group. It takes the name of the test group and the name of the test case as arguments.
+
+The RUN_TEST_GROUP and RUN_TEST_CASE functions are used to run all tests in a group, or a specific test within a group, respectively.
+
+The TEST_ASSERT_* macros are used to make assertions about the expected behavior of the code being tested. For example, the TEST_ASSERT_EQUAL macro can be used to assert that two values are equal, while the TEST_ASSERT_EQUAL_STRING macro can be used to assert that two strings are equal.
+
+Overall, Unity test fixture provides a powerful and easy-to-use framework for writing and organizing unit tests for C programs.
+
 >_Those who want really reliable software will discover that they must find means of avoiding the majority of bugs to start with, and as a result the programming process will become cheaper. If you want more effective programmers, you will discover that they should not waste their time debugging, they should not introduce the bugs to start with._		 - **Edsger W. Dijkstra**    _"The Humble Programmer"_  	
 
 ### The Four-phase Test Pattern
