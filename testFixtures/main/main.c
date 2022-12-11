@@ -1,53 +1,55 @@
+
 #include <stdio.h>
 #include <string.h>
 #include <unity.h>
 #include <unity_fixture.h>
 
-static char output[100];
-static const char *expected;
+char output[100];
+// Test group and test case names should be descriptive and descriptive
+TEST_GROUP(SprintfTests);
 
-TEST_GROUP(TEST_1);
-/* similar to constructor */
-TEST_SETUP(TEST_1)
+TEST_SETUP(SprintfTests)
 {
-    memset(output,0xaa, sizeof output);
-    expected ="";
+    // Clear the output buffer before each test
+    memset(output, 0, sizeof output);
 }
 
-/* similar to deconstructor */
-TEST_TEAR_DOWN(TEST_1){}
+TEST_TEAR_DOWN(SprintfTests)
+{
+    // No tear-down needed for this test group
+}
 
-/* tests for sprintf */
-TEST(TEST_1,noFormatOperation)
+// Test the sprintf function without using any format specifiers
+TEST(SprintfTests, NoFormatSpecifiers)
 {
     char output[5] = "";
     TEST_ASSERT_EQUAL(3, sprintf(output, "hey"));
     TEST_ASSERT_EQUAL_STRING("hey", output);
 }
 
-TEST(TEST_1,insertString)
+// Test the sprintf function's ability to insert a string into the output
+TEST(SprintfTests, InsertString)
 {
     char output[20] = "";
     TEST_ASSERT_EQUAL(12, sprintf(output, "Hello %s\n", "world"));
     TEST_ASSERT_EQUAL_STRING("Hello world\n", output);
 }
 
-/* merging similar types of test */
-TEST_GROUP_RUNNER(TEST_1)
+// Run the tests in the SprintfTests group
+TEST_GROUP_RUNNER(SprintfTests)
 {
-    RUN_TEST_CASE(TEST_1,noFormatOperation);
-    RUN_TEST_CASE(TEST_1,insertString);
+    RUN_TEST_CASE(SprintfTests, NoFormatSpecifiers);
+    RUN_TEST_CASE(SprintfTests, InsertString);
 }
 
-/* where all tests are called */
+// Run all of the tests in the application
 static void run_all_tests(void)
 {
-    RUN_TEST_GROUP(TEST_1);
+    RUN_TEST_GROUP(SprintfTests);
 }
 
-/* where tests are called */
+// Entry point for the test application
 void app_main(void)
 {
     UNITY_MAIN_FUNC(run_all_tests);
 }
-
