@@ -8,7 +8,14 @@ Test-Driven Development is a technique for building software incrementally. simp
 ### RED  GREEN REFACTOR
 The rhythm of TDD is referred to as _Red-Green-Refactor._
 
-![rumbling-about-test-driven-development](https://user-images.githubusercontent.com/98380527/203617797-2ecde856-e67c-44a8-a632-329ee0d74849.jpeg)
+```mermaid
+
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0000', 'edgeLabelBackground':'#ffffee','fontSize':'30px', 'tertiaryColor': '#fff0f0'}}}%%
+
+graph LR;
+RED-->GREEN-->REFACTOR-->RED
+```
+
 
 ### TDD Benefits
 just as with any skills.  TDD skills take time to develop. Many devs have adopted would not go back to debug-later programming 
@@ -57,86 +64,23 @@ TEST_CASE("Test 1", "Test for sprintf")
 1 Tests 1 Failures 0 Ignored 
 FAIL
 ```
-For more examples of how to write tests like the above check [FirstUnitTest](https://github.com/segin-GH/TDD-4-Embedded/tree/main/FirstUnitTest) 
+For more examples of how to write tests like the above check [FirstUnitTest](https://github.com/segin-GH/TDD-4-Embedded/tree/main/FirstUnitTest/main/main.c) 
 
 >**NOTE:** It's a judgment call on how far to take tests. you will see when we get into TDD  how to decide which test to write
 
-With these kinds of tests written in [FirstUnitTest](https://github.com/segin-GH/TDD-4-Embedded/tree/main/FirstUnitTest)  you can see that some subtle duplication creeping into the test for eg `ouput[x]=""`  in every test case there is `output[x]=""` to avoid this we can use something called _test fixture_.
+With these kinds of tests written in [FirstUnitTest](https://github.com/segin-GH/TDD-4-Embedded/tree/main/FirstUnitTest/main/main.c)  you can see that some subtle duplication creeping into the test for eg `ouput[x]=""`  in every test case there is `output[x]=""` to avoid this we can use something called _test fixture_.
 
 ### Test Fixtures in Unity
-example of test fixture:-
-```
-#include <stdio.h>
-#include <string.h>
-#include <unity.h>
-#include <unity_fixture.h>
+An example of a test fixture can be found at [TestFixtures](https://github.com/segin-GH/TDD-4-Embedded/blob/main/testFixtures/main/main.c)
+Duplication reduction is the motivation for test fixtures it may not be 
+noticeable in small tests but in larger tests, it can simplify your tests.
 
-/**
- *  @brief way to write test in test fixtures
- */
+>_Those who want really reliable software will discover that they must find means of avoiding the majority of bugs to start with, and as a result the programming process will become cheaper. If you want more effective programmers, you will discover that they should not waste their time debugging, they should not introduce the bugs to start with._		 - **Edsger W. Dijkstra**    _"The Humble Programmer"_  	
 
+### The Four-phase Test Pattern
+The goal of using a test pattern are to create a concise, readable, and well-structured tests. if you follow this pattern  the test readers  can quickily determine what is being tested.
 
-static char output[100];
-static const char *expected;
-
-TEST_GROUP(TEST_1);
-
-/**
- *  @brief similar to a constructor
- */
-TEST_SETUP(TEST_1)
-{
-    memset(output,0xaa, sizeof output);
-    expected ="";
-}
-
-/**
- *  @brief similar to a deconstructor 
- */
-TEST_TEAR_DOWN(TEST_1){}
-
-/**
- *  @brief tests for sprintf
- */
-
-TEST(TEST_1,noFormatOperation)
-{
-    char output[5] = "";
-    TEST_ASSERT_EQUAL(3, sprintf(output, "hey"));
-    TEST_ASSERT_EQUAL_STRING("hey", output);
-}
-
-TEST(TEST_1,insertString)
-{
-    char output[20] = "";
-    TEST_ASSERT_EQUAL(12, sprintf(output, "Hello %s\n", "world"));
-    TEST_ASSERT_EQUAL_STRING("Hello world\n", output);
-}
-
-/**
- *  @brief grups all similar tests
- */
-TEST_GROUP_RUNNER(TEST_1)
-{
-    RUN_TEST_CASE(TEST_1,noFormatOperation);
-    RUN_TEST_CASE(TEST_1,insertString);
-}
-
-/**
- *  @brief a func that runs all the tests
- */
-static void run_all_tests(void)
-{
-    RUN_TEST_GROUP(TEST_1);
-}
-
-/** 
- * @brief calling tests in main
- */
-void app_main(void)
-{
-    UNITY_MAIN_FUNC(run_all_tests);
-}
-
-
-```
+- `setup : Establish the precodictions to the test`
+- `Exercise : Do something to the system`
+- `Verify : Check the expected outcome`
+- `Cleanup : return the system under test to its initial state`
