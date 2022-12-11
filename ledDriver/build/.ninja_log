@@ -1036,3 +1036,16 @@
 47188	48060	1670775790505786473	ledDriver.elf	aaa3200991b3aabc
 48060	48170	1670775790617780625	.bin_timestamp	dee71b0d6c6be660
 48170	48200	0	esp-idf/esptool_py/CMakeFiles/app_check_size	63a67f8c94a7b09a
+644	12957	1670790714686426879	build.ninja	bdb64a67415ebf0d
+175	311	1670775751307608214	bootloader-prefix/src/bootloader-stamp/bootloader-build	5c001ff38d3ac8a6
+175	311	1670775751307608214	bootloader/bootloader.elf	5c001ff38d3ac8a6
+175	311	1670775751307608214	bootloader/bootloader.bin	5c001ff38d3ac8a6
+175	311	1670775751307608214	bootloader/bootloader.map	5c001ff38d3ac8a6
+175	1049	1670790715822421511	esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_app_desc.c.obj	33e08f30bcb661a4
+1049	1195	1670790715970420812	esp-idf/app_update/libapp_update.a	e1d58fb880d63159
+1196	1227	1670790716002420660	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	b7505e640cdd4f04
+1227	1236	1670790716010420623	esp-idf/main/libmain.a	1e95f97c23199406
+1236	4058	1670790718810407384	esp-idf/esp_system/ld/sections.ld	a027568c0f4a96cc
+4058	5573	1670790720342400136	ledDriver.elf	aaa3200991b3aabc
+5573	5956	1670790720730398300	.bin_timestamp	dee71b0d6c6be660
+5956	5994	0	esp-idf/esptool_py/CMakeFiles/app_check_size	63a67f8c94a7b09a
