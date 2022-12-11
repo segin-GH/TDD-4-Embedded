@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <string.h>
 #include <unity.h>
@@ -22,7 +21,6 @@ TEST_TEAR_DOWN(SprintfTests)
 // Test the sprintf function without using any format specifiers
 TEST(SprintfTests, NoFormatSpecifiers)
 {
-    char output[5] = "";
     TEST_ASSERT_EQUAL(3, sprintf(output, "hey"));
     TEST_ASSERT_EQUAL_STRING("hey", output);
 }
@@ -30,7 +28,6 @@ TEST(SprintfTests, NoFormatSpecifiers)
 // Test the sprintf function's ability to insert a string into the output
 TEST(SprintfTests, InsertString)
 {
-    char output[20] = "";
     TEST_ASSERT_EQUAL(12, sprintf(output, "Hello %s\n", "world"));
     TEST_ASSERT_EQUAL_STRING("Hello world\n", output);
 }
