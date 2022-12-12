@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <unity.h>
 #include <unity_fixture.h>
-#include "ledDriver.h"
+// #include "ledDriver.h"
 
-char buffer[10];
-char recivedBuffer[10];
+static void RUN_ALL_TEST(void)
+{
+   RUN_TEST_GROUP(LedDriver);
+}
 
 void app_main(void)
 {
-   printf("name is running in test %s\n", printHello(buffer, "segin"));
+   UNITY_MAIN_FUNC(RUN_ALL_TEST);
 }
