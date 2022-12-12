@@ -1,2 +1,0 @@
-/home/bot/code/TDD-4-Embedded/ledDriver/test/build/CMakeFiles/rebuild_cache.dir
-/home/bot/code/TDD-4-Embedded/ledDriver/test/build/CMakeFiles/edit_cache.dir
