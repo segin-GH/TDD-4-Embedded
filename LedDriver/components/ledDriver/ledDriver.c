@@ -1,9 +1,8 @@
 #include "ledDriver.h"
 
+static int ledRegister = 0x01; 
 
-char* printHello(char *buffer , char *name)
+void ledDriverInit(void)
 {
-    sprintf(buffer,"Hello ");
-    sprintf(buffer,name);
-    return buffer;
+    printf("led driver init sucessfull\n");
 }

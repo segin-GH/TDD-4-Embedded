@@ -1,2 +1,5 @@
-idf_component_register(SRCS "test_ledDriver.c"
-                    INCLUDE_DIRS ".")
+idf_component_register(
+    SRCS "test_runner_main.c"
+    INCLUDE_DIRS "."
+    
+    )
