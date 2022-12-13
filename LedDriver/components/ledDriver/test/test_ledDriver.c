@@ -6,7 +6,7 @@
 
 /** @todo LED DRIVER TESTS 
  *
- *  //TODO are all led's off after init
+ *  TODO are all led's off after init
  *  //TODO a single led can be turned on
  *  //TODO a single led can be turned off
  *  //TODO Multiple led's can be turned on/off
@@ -20,6 +20,8 @@
 #include <unity_fixture.h>
 #include "ledDriver.h"
 
+
+
 TEST_GROUP(LedDriver);
 
 TEST_SETUP(LedDriver)
@@ -32,13 +34,28 @@ TEST_TEAR_DOWN(LedDriver)
     // clean up after test
 }
 
-TEST(LedDriver, is_leds_off_after_init)
+TEST(LedDriver, are_all_the_led_off_after_init)
 {
-    // TEST_FAIL_MESSAGE("start here");
+    uint16_t virtualLed = 0xffff;
+    
+    /* passing the virtualLed to the driver is called dependency injection */
+    ledDriverInit(&virtualLed);
+
+    TEST_ASSERT_EQUAL_HEX16(0,virtualLed);
+}
+
+TEST(LedDriver, turn_on_led_one)
+{
+    uint16_t virtualLed;
+    ledDriverInit(&virtualLed);
+    ledDriverTurnON(1);
+    TEST_ASSERT_EQUAL_HEX16(1,virtualLed);
 }
 
  
 TEST_GROUP_RUNNER(LedDriver)
 {
-    RUN_TEST_CASE(LedDriver, is_leds_off_after_init);
+    RUN_TEST_CASE(LedDriver, are_all_the_led_off_after_init);
+    RUN_TEST_CASE(LedDriver,turn_on_led_one);
+
 }

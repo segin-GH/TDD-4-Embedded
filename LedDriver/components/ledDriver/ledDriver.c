@@ -1,8 +1,21 @@
 #include "ledDriver.h"
 
-static int ledRegister = 0x01; 
+static uint16_t *virtualLed;
 
-void ledDriverInit(void)
+void ledDriverInit(uint16_t *memoryMappedAddr)
 {
-    printf("led driver init sucessfull\n");
+    virtualLed = memoryMappedAddr;
+    *virtualLed = 0;
+}
+
+
+void ledDriverDestroy(void)
+{
+    //
+}
+
+
+void ledDriverTurnON(int ledNumber)
+{
+    *virtualLed = 1;
 }
