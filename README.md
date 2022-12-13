@@ -92,9 +92,22 @@ Overall, Unity test fixture provides a powerful and easy-to-use framework for wr
 >_Those who want really reliable software will discover that they must find means of avoiding the majority of bugs to start with, and as a result the programming process will become cheaper. If you want more effective programmers, you will discover that they should not waste their time debugging, they should not introduce the bugs to start with._		 - **Edsger W. Dijkstra**    _"The Humble Programmer"_  	
 
 ### The Four-phase Test Pattern
-The goal of using a test pattern are to create a concise, readable, and well-structured tests. if you follow this pattern  the test readers  can quickily determine what is being tested.
+The goal of using a test pattern is to create concise, readable, and well-structured tests. if you follow this pattern the test readers can quickly determine what is being tested.
 
-- `setup : Establish the precodictions to the test`
+- `setup : Establish the preconditions to the test`
 - `Exercise : Do something to the system`
 - `Verify : Check the expected outcome`
 - `Cleanup : return the system under test to its initial state`
+## Writing a C Module
+In C programming, a module is a piece of software that has a specific purpose and contains a collection of functions and data that are designed to be used together. C modules are typically used to organize and reuse code, making it easier to develop and maintain complex software systems. you will also see that modular design is a natural outcome of TDD.
+Modular programming can help make code more testable. By breaking a program up into smaller, modular pieces, individual modules can be tested separately to ensure that they are working properly. This can make it easier to identify and fix problems in the code, and can also make it easier to write automated tests to ensure the quality of the code. 
+Example of a c module [Led Driver ](https://github.com/segin-GH/TDD-4-Embedded/tree/main/LedDriver).
+#### What does an led driver do?
+- The led driver controls 16 two-state LEDs.
+- The driver can turn on/off the led's individual Led without affecting other LEDs.
+- The driver can turn all LEDs on/off in one interface call.
+- The user of the driver can query the state of the led.
+- At power on the hardware default is for LEDs to be latched on. they must be turned off by the software.
+- LEDs are memory mapped to a 16 but memory address.
+- A 1-in-a-bit position lights the corresponding led on; 0 turn's it off.
+- the LSB corresponds to Led 1; and the MSB corresponds to LEDs 16.
