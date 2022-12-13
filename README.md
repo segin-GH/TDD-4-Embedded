@@ -102,7 +102,9 @@ The goal of using a test pattern is to create concise, readable, and well-struct
 In C programming, a module is a piece of software that has a specific purpose and contains a collection of functions and data that are designed to be used together. C modules are typically used to organize and reuse code, making it easier to develop and maintain complex software systems. you will also see that modular design is a natural outcome of TDD.
 
 Modular programming can help make code more testable. By breaking a program up into smaller, modular pieces, individual modules can be tested separately to ensure that they are working properly. This can make it easier to identify and fix problems in the code, and can also make it easier to write automated tests to ensure the quality of the code. 
+
 Example of a c module [Led Driver ](https://github.com/segin-GH/TDD-4-Embedded/tree/main/LedDriver).
+
 #### What does an led driver do?
 - The led driver controls 16 two-state LEDs.
 - The driver can turn on/off the led's individual Led without affecting other LEDs.
