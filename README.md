@@ -170,3 +170,15 @@ void ledDriverInit(uint16_t *memoryMappedAddr)
 ```
 that's it you just hard code the value and the test passes "hurray"
 this may feel like a bit weird but believe me, this works the concept of __virtual leds__ 
+
+#### Test-Drive the Interface Before the Internals
+A good interface is critical for a well-designed module the first few tests drive the interface design the focus in the interface means that we're working from the outside of the code that is being developed to the inside. The test is the first user of the interface that gives the callers 
+(or client code ) a perspective of how to use the code being developed. starting from the user's perspective leads to a more usable interface.
+
+---
+**Bob Martin's three Laws of TDD**
+
+- Do not write production code unless it is to make a failing unit test pass.
+- Do not write more of a unit test than is sufficient to fail, and build failures are failures
+- Do not write more production code than is sufficient to pass the one failing unit test
+---
