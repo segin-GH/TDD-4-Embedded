@@ -144,7 +144,7 @@ TEST(LedDriver, are_all_the_led_off_after_init)
 {
     uint16_t virtualLed = 0xffff;
 
-    /* passing the virtualLed to the driver is called dependency injection */
+    /* passing the virtualLed to the driver is use of dependency injection */
     ledDriverInit(&virtualLed);
     TEST_ASSERT_EQUAL_HEX16(0,virtualLed);
 }
