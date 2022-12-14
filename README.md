@@ -141,18 +141,18 @@ First Test
 ```
 TEST(LedDriver, are_all_the_led_off_after_init)
 {
-uint16_t virtualLed = 0xffff;
+    uint16_t virtualLed = 0xffff;
 
-/* passing the virtualLed to the driver is called dependency injection */
-ledDriverInit(&virtualLed);
-TEST_ASSERT_EQUAL_HEX16(0,virtualLed);
+    /* passing the virtualLed to the driver is called dependency injection */
+    ledDriverInit(&virtualLed);
+    TEST_ASSERT_EQUAL_HEX16(0,virtualLed);
 }
 ```
 this will fail because our `ledDriverInit` is not implemented.
 ```
 void ledDriverInit(uint16_t *memoryMappedAddr)
 {
-	//
+    //
 }
 ```
 To make the test pass hardcode some value.
@@ -161,8 +161,8 @@ static  uint16_t *virtualLed;
 
 void ledDriverInit(uint16_t *memoryMappedAddr)
 {
-	virtualLed = memoryMappedAddr;
-	*virtualLed = 0;
+    virtualLed = memoryMappedAddr;
+    *virtualLed = 0;
 }
 ```
 that's it you just hard code the value and the test passes "hurray"
