@@ -182,3 +182,13 @@ A good interface is critical for a well-designed module the first few tests driv
 - Do not write more of a unit test than is sufficient to fail, and build failures are failures
 - Do not write more production code than is sufficient to pass the one failing unit test
 ---
+
+---
+#### Tests are FIRST
+in _Agile in a Flash_ Tim Ottinger and Jeff langer tells is five critical attributes of unit tests Tests need to be First to be most effective.
+
+- **F**  ---   Fast: Tests are fast, so fast that developers run them with every small change without waits that break the flow.
+-  **I**  ---  Isolated: Tests are isolated. One test does not set up the next test. Tests also isolate the failures
+-  **R** --- Repeatable: Tests are repeatable; repeatable means automated test run in a loop always giving the same result
+- **S** --- Self-verifying:  Test Verify their outcome, reporting a simple "OK" when they pass while providing concise detail when they fail.
+- **T** --- Timely: Tests are timely. programmers write them just in time, in lock-step (but just before) the production code, preventing bugs
