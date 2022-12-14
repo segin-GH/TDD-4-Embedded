@@ -137,6 +137,7 @@ One key point is that write test first and then let it fail, then write producti
 How will you make this function pass the test - **virtual led**
 you just create a virtual led or hardcode the value, this can help you in two ways you can make your test pass and you don't need physical 
 hardware connected to do unit tests.
+
 First Test
 ```
 TEST(LedDriver, are_all_the_led_off_after_init)
@@ -148,6 +149,7 @@ TEST(LedDriver, are_all_the_led_off_after_init)
     TEST_ASSERT_EQUAL_HEX16(0,virtualLed);
 }
 ```
+
 this will fail because our `ledDriverInit` is not implemented.
 ```
 void ledDriverInit(uint16_t *memoryMappedAddr)
@@ -155,6 +157,7 @@ void ledDriverInit(uint16_t *memoryMappedAddr)
     //
 }
 ```
+
 To make the test pass hardcode some value.
 ```
 static  uint16_t *virtualLed;
