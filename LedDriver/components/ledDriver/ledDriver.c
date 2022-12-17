@@ -18,7 +18,7 @@ void ledDriverDestroy(void)
 /* turn on one led */
 void ledDriverTurnON(int ledNumber)
 {
-    *virtualLed = 1;
+    *virtualLed |= (1 << (ledNumber -1));
 }
 
 /* turn off one led */
