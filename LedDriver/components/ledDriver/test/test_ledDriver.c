@@ -55,11 +55,18 @@ TEST(LedDriver, turn_off_led_one)
     TEST_ASSERT_EQUAL_HEX16(0,virtualLed);
 }
 
+TEST(LedDriver, turn_on_multiple_led)
+{
+    ledDriverTurnON(9);
+    ledDriverTurnON(8);
+    TEST_ASSERT_EQUAL_HEX16(0x180, virtualLed);
+}
 
 TEST_GROUP_RUNNER(LedDriver)
 {
     RUN_TEST_CASE(LedDriver, are_all_the_led_off_after_init);
-    RUN_TEST_CASE(LedDriver,turn_on_led_one);
+    RUN_TEST_CASE(LedDriver, turn_on_led_one);
     RUN_TEST_CASE(LedDriver, turn_off_led_one);
+    RUN_TEST_CASE(LedDriver, turn_on_multiple_led);
 
 }
