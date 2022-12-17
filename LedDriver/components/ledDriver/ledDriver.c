@@ -31,3 +31,9 @@ void ledDriverTurnOFF(int ledNumber)
 {
     *virtualLed = 0;
 }
+
+
+void ledDriverTurnAllOn()
+{
+    *virtualLed = 0xffff;
+}
