@@ -15,10 +15,15 @@ void ledDriverDestroy(void)
     //
 }
 
+static uint16_t convertLedNumberTBit(int ledNumber)
+{
+    return 1 << (ledNumber - 1);
+}
+
 /* turn on one led */
 void ledDriverTurnON(int ledNumber)
 {
-    *virtualLed |= (1 << (ledNumber -1));
+    *virtualLed |= convertLedNumberTBit(ledNumber);
 }
 
 /* turn off one led */
