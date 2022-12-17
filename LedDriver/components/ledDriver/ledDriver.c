@@ -1,5 +1,11 @@
 #include "ledDriver.h"
 
+const enum
+{
+    ALL_LED_ON = ~0,
+    ALL_LED_OFF = ~ALL_LED_ON
+}led_val;
+
 static uint16_t *virtualLed;
 
 /* initialize led driver */
@@ -29,11 +35,11 @@ void ledDriverTurnON(int ledNumber)
 /* turn off one led */
 void ledDriverTurnOFF(int ledNumber)
 {
-    *virtualLed = 0;
+    *virtualLed &= ~(convertLedNumberTBit(ledNumber));
 }
 
 
 void ledDriverTurnAllOn()
 {
-    *virtualLed = 0xffff;
+    *virtualLed = ALL_LED_ON;
 }
