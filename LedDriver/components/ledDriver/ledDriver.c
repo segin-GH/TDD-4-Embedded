@@ -6,13 +6,15 @@ const enum
     ALL_LED_OFF = ~ALL_LED_ON
 }led_val;
 
-static uint16_t *virtualLed;
+static uint16_t *virtualLedAddr;
+static uint16_t ledImg;
 
 /* initialize led driver */
 void ledDriverInit(uint16_t *memoryMappedAddr)
 {
-    virtualLed = memoryMappedAddr;
-    *virtualLed = 0;
+    virtualLedAddr = memoryMappedAddr;
+    ledImg = ALL_LED_OFF;
+    *virtualLedAddr = ledImg;
 }
 
 /* clean up led driver after no use */
@@ -29,17 +31,20 @@ static uint16_t convertLedNumberTBit(int ledNumber)
 /* turn on one led */
 void ledDriverTurnON(int ledNumber)
 {
-    *virtualLed |= convertLedNumberTBit(ledNumber);
+    ledImg |= convertLedNumberTBit(ledNumber);
+    *virtualLedAddr = ledImg;
 }
 
 /* turn off one led */
 void ledDriverTurnOFF(int ledNumber)
 {
-    *virtualLed &= ~(convertLedNumberTBit(ledNumber));
+   ledImg &= ~(convertLedNumberTBit(ledNumber));
+    *virtualLedAddr = ledImg; 
 }
 
 
 void ledDriverTurnAllOn()
 {
-    *virtualLed = ALL_LED_ON;
+   ledImg = ALL_LED_ON;
+    *virtualLedAddr = ledImg; 
 }
