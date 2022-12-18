@@ -4,5 +4,5 @@
 
 void app_main(void)
 {
-   // main code
+   printf("main.c got executed\n");
 }
