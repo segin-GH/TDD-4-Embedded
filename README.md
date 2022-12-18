@@ -191,4 +191,111 @@ in _Agile in a Flash_ Tim Ottinger and Jeff langer tells five critical attribute
 -  **I**  ---  Isolated: Tests are isolated. One test does not set up the next test. Tests also isolate the failures
 -  **R** --- Repeatable: Tests are repeatable; repeatable means automated test run in a loop always giving the same result
 - **S** --- Self-verifying:  Test Verify their outcome, reporting a simple "OK" when they pass while providing concise detail when they fail.
-- **T** --- Timely: Tests are timely. programmers write them just in time, in lock-step (but just before) the production code, preventing bugs
+- **T** --- Timely: Tests are timely. programmers write them just in time, in lock-step (but just before) the production code, preventing bugs.
+
+
+### What is stub?
+In software testing, a stub is a piece of code that stands in for some other programming functionality. It is often used in testing to simulate the behavior of a real piece of code that has not yet been implemented or is unavailable for use.
+
+For example, consider a program that needs to communicate with a database to retrieve data. If the database is not yet available or if the database connection is not yet implemented, a stub could be used to simulate the behavior of the database connection and return dummy data in its place. This allows the rest of the program to be tested and debugged without having to rely on the actual database connection.
+
+In the context of C programming, a stub is simply a C function that is written to stand in for some other function or piece of code. It can be used in a variety of testing scenarios to simulate the behavior of real code and allow for testing to proceed.
+
+Here is an example of a stub function in C:
+```
+#include <stdio.h>
+
+// Dummy function that stands in for a database connection
+int connect_to_database(char* host, char* user, char* password) {
+  // In a real implementation, this function would attempt to connect
+  // to a database with the given host, user, and password.
+  // For this example, we will just print a message and return 0.
+  printf("Connecting to database...\n");
+  return 0;
+}
+
+int main() {
+  // Test the database connection stub
+  int result = connect_to_database("localhost", "user", "password");
+  printf("Result: %d\n", result);
+  return 0;
+}
+
+```
+In this example, the `connect_to_database` function is a stub that stands in for a real database connection. It simply prints a message and returns 0, simulating the behavior of a successful database connection. The `main` function calls the `connect_to_database` function and prints the result, which in this case would be 0.
+
+Note that this is just a very simple example and a real stub function for a database connection would likely be much more complex and include more detailed simulation of the database connection process.
+
+### what is mock in c test?
+A mock is a type of test double (a simulated object used in place of a real object for testing purposes) that is used to mimic the behavior of a real object in a controlled way. In software testing, mocks are often used to simulate the behavior of complex, real-world objects and interactions in a controlled manner, allowing you to test the behavior of your code in isolation from external dependencies.
+
+In the context of C programming, a mock is simply a C function or object that is written to mimic the behavior of a real function or object in a controlled way. It is often used in conjunction with stubs to create more comprehensive and robust tests.
+
+Here is an example of a mock function in C:
+```
+#include <stdio.h>
+
+// Mock function that stands in for a database connection
+int connect_to_database(char* host, char* user, char* password) {
+  // In a real implementation, this function would attempt to connect
+  // to a database with the given host, user, and password.
+  // For this example, we will just check the input values and return 0
+  // if they are correct and -1 if they are incorrect.
+  if (strcmp(host, "localhost") == 0 && strcmp(user, "user") == 0 && strcmp(password, "password") == 0) {
+    return 0;
+  } else {
+    return -1;
+  }
+}
+
+int main() {
+  // Test the database connection mock
+  int result = connect_to_database("localhost", "user", "password");
+  printf("Result: %d\n", result);
+  return 0;
+}
+```
+In this example, the `connect_to_database` function is a mock that stands in for a real database connection. It checks the input values passed to it (the host, user, and password) and returns 0 if they are correct and -1 if they are incorrect. The `main` function calls the `connect_to_database` function and prints the result, which in this case would be 0.
+
+Mock objects can be used to simulate a wide range of behaviors and interactions, allowing you to thoroughly test the behavior of your code in a variety of different scenarios
+
+#### what is Cmock?
+CMock is a tool that is used to generate mock functions for use in unit testing in the C programming language. It is designed to make it easier to create mock functions that can be used to test the behavior of C code in isolation from external dependencies.
+
+To use CMock, you provide it with a header file that declares the functions that you want to mock. CMock will then generate mock versions of those functions that can be used in your unit tests. The mock functions behave in a similar way to stubs, in that they stand in for the real functions and allow you to test the behavior of your code without actually calling the real functions. However, CMock takes this a step further by allowing you to specify the behavior of the mock functions in advance, including what they should return and how they should behave when called. This allows you to create more comprehensive and robust unit tests.
+
+Here is an example of how you might use CMock to generate mock functions in a C project:
+
+1.  First, create a header file that declares the functions that you want to mock. For example:
+
+```
+#ifndef MOCK_FUNCTIONS_H
+#define MOCK_FUNCTIONS_H
+
+int connect_to_database(char* host, char* user, char* password);
+int query_database(char* query);
+
+#endif
+
+```
+2.  Next, run CMock on the header file to generate the mock functions. This will typically involve running a command like `cmock --mock=mock_functions.h`. This will generate a file called `mock_functions.c` that contains the mock versions of the functions declared in the header file.
+    
+3.  In your unit tests, include the generated `mock_functions.c` file and use the mock functions as needed. For example:
+```
+#include "mock_functions.h"
+
+void test_database_connection() {
+  // Test the database connection mock
+  int result = connect_to_database("localhost", "user", "password");
+  assert(result == 0);
+}
+
+int main() {
+  test_database_connection();
+  return 0;
+}
+
+```
+In this example, the `connect_to_database` function is a mock function that was generated by CMock. It stands in for the real function and allows you to test the behavior of your code without actually calling the real function.
+
+CMock is a powerful tool that can help you create more comprehensive and robust unit tests for your C code, making it easier to catch and fix bugs and ensure the quality of your software.
