@@ -39,6 +39,9 @@ void ledDriverDestroy(void)
 /* turn on one led */
 void ledDriverTurnON(int ledNumber)
 {
+    if(ledNumber <= 0 || ledNumber > 16)
+        return;
+
     ledImg |= convertLedNumToBit(ledNumber);
     updateHardware();
 }
@@ -46,6 +49,9 @@ void ledDriverTurnON(int ledNumber)
 /* turn off one led */
 void ledDriverTurnOFF(int ledNumber)
 {
+    if(ledNumber <= 0 || ledNumber > 16)
+        return;
+
     ledImg &= ~(convertLedNumToBit(ledNumber));
     updateHardware(); 
 }
