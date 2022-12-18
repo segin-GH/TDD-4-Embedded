@@ -194,15 +194,6 @@ in _Agile in a Flash_ Tim Ottinger and Jeff langer tells five critical attribute
 - **T** --- Timely: Tests are timely. programmers write them just in time, in lock-step (but just before) the production code, preventing bugs.
 
 
-#### Tests are FIRST
-in _Agile in a Flash_ Tim Ottinger and Jeff langer tells five critical attributes of unit tests Tests need to be First to be most effective.
-
-- **F**  ---   Fast: Tests are fast, so fast that developers run them with every small change without waits that break the flow.
--  **I**  ---  Isolated: Tests are isolated. One test does not set up the next test. Tests also isolate the failures
--  **R** --- Repeatable: Tests are repeatable; repeatable means automated test run in a loop always giving the same result
-- **S** --- Self-verifying:  Test Verify their outcome, reporting a simple "OK" when they pass while providing concise detail when they fail.
-- **T** --- Timely: Tests are timely. programmers write them just in time, in lock-step (but just before) the production code, preventing bugs.
-
 ### What is stub?
 In software testing, a stub is a piece of code that stands in for some other programming functionality. It is often used in testing to simulate the behavior of a real piece of code that has not yet been implemented or is unavailable for use.
 
