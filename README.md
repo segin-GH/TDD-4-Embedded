@@ -191,4 +191,4 @@ in _Agile in a Flash_ Tim Ottinger and Jeff langer tells five critical attribute
 -  **I**  ---  Isolated: Tests are isolated. One test does not set up the next test. Tests also isolate the failures
 -  **R** --- Repeatable: Tests are repeatable; repeatable means automated test run in a loop always giving the same result
 - **S** --- Self-verifying:  Test Verify their outcome, reporting a simple "OK" when they pass while providing concise detail when they fail.
-- **T** --- Timely: Tests are timely. programmers write them just in time, in lock-step (but just before) the production code, preventing bugs
+- **T** --- Timely: Tests are timely. programmers write them just in time, in lock-step (but just before) the production code, preventing bugs.
