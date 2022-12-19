@@ -19,6 +19,7 @@
 #include <unity.h>
 #include <unity_fixture.h>
 #include "ledDriver.h"
+#include "runTimeErr.h"
 
 uint16_t virtualLed;
 
@@ -109,6 +110,12 @@ TEST(LedDriver, out_of_bound_turning_off_does_no_harm)
     TEST_ASSERT_EQUAL_HEX16(0xffff, virtualLed);
 }
 
+TEST(LedDriver, out_of_bound_value_produces_run_time_error)
+{
+    RUNTIME_ERROR("ohh", 1);
+}
+
+
 TEST_GROUP_RUNNER(LedDriver)
 {
     RUN_TEST_CASE(LedDriver, are_all_the_led_off_after_init);
@@ -121,4 +128,5 @@ TEST_GROUP_RUNNER(LedDriver)
     RUN_TEST_CASE(LedDriver, upper_and_lower_bounds);
     RUN_TEST_CASE(LedDriver, out_of_bound_turning_on_does_no_harm);
     RUN_TEST_CASE(LedDriver, out_of_bound_turning_off_does_no_harm);
+    RUN_TEST_CASE(LedDriver, out_of_bound_value_produces_run_time_error);
 }
