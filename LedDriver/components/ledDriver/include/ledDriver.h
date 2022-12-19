@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <runTimeErr.h>
 
 /* inti led driver */
 void ledDriverInit(uint16_t *memoryMappedAddr);
