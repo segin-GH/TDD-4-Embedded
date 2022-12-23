@@ -4,4 +4,5 @@ idf_component_register(
 
     REQUIRES cmock ledDriver
     REQUIRES cmock runTimeErr
+    REQUIRES cmock runTimeErrStub
     )
