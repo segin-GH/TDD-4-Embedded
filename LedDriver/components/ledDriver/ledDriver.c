@@ -1,12 +1,17 @@
 #include "ledDriver.h"
 
+static uint16_t *virtualLedAddr;
+static uint16_t ledImg;
+
 const enum {
     ALL_LED_ON = ~0,
     ALL_LED_OFF = ~ALL_LED_ON
 }led_val;
 
-static uint16_t *virtualLedAddr;
-static uint16_t ledImg;
+const enum {
+    FIRST_LED = 1,
+    LAST_LED = 16,
+}led_num_def;
 
 
 /* wrapper function for updating hardware */
@@ -19,6 +24,23 @@ void updateHardware()
 static uint16_t convertLedNumToBit(int ledNumber)
 {
     return 1 << (ledNumber - 1);
+}
+
+static bool isLedOutOfBound(int ledNumber)
+{
+    if((ledNumber < FIRST_LED) || (ledNumber > LAST_LED))
+        return true;
+    return false;
+}
+
+static void setLedImgBit(int ledNumber)
+{
+    ledImg |= convertLedNumToBit(ledNumber);
+}
+
+static void clearLedImgBit(int ledNumber)
+{
+    ledImg &= ~(convertLedNumToBit(ledNumber));
 }
 
 /* initialize led driver */
@@ -39,20 +61,20 @@ void ledDriverDestroy(void)
 /* turn on one led */
 void ledDriverTurnON(int ledNumber)
 {
-    if(ledNumber <= 0 || ledNumber > 16)
+    if(isLedOutOfBound(ledNumber))
         return;
 
-    ledImg |= convertLedNumToBit(ledNumber);
+    setLedImgBit(ledNumber);
     updateHardware();
 }
 
 /* turn off one led */
 void ledDriverTurnOFF(int ledNumber)
 {
-    if(ledNumber <= 0 || ledNumber > 16)
+    if(isLedOutOfBound(ledNumber))
         return;
 
-    ledImg &= ~(convertLedNumToBit(ledNumber));
+    clearLedImgBit(ledNumber);
     updateHardware(); 
 }
 
