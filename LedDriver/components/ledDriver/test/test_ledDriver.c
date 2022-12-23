@@ -9,10 +9,17 @@
 *    TODO are all led's off after init
 *    TODO a single led can be turned on
 *    TODO a single led can be turned off
-*    TODO Multiple led's can be turned on/off
-    TODO Turn all led's on/off
+*    TODO Multiple led's can be turned off
+    TODO Multiple led's can be turned on
+    TODO Turn all led's on
+    TODO Turn all led's off
     TODO Query Led state
     TODO check boundary value
+*       TODO beyond Max Breaks nothing
+*       TODO under min breaks nothing
+*       TODO provides RunTime error
+        TODO what should really happen?
+
     TODO check out-of-bound value 
 */
 
@@ -121,6 +128,12 @@ IGNORE_TEST(LedDriver, out_of_bound_value_produces_run_time_error)
     TEST_ASSERT_EQUAL(-1, runTimeErrStub_getLastParameter());
 }
 
+TEST(LedDriver, is_led_on)
+{
+    TEST_ASSERT_FALSE(ledDriverIsLedOn(11));
+    ledDriverTurnON(11);
+    TEST_ASSERT_TRUE(ledDriverIsLedOn(11));
+}
 
 TEST_GROUP_RUNNER(LedDriver)
 {
@@ -135,4 +148,5 @@ TEST_GROUP_RUNNER(LedDriver)
     RUN_TEST_CASE(LedDriver, out_of_bound_turning_on_does_no_harm);
     RUN_TEST_CASE(LedDriver, out_of_bound_turning_off_does_no_harm);
     RUN_TEST_CASE(LedDriver, out_of_bound_value_produces_run_time_error);
+    RUN_TEST_CASE(LedDriver, is_led_on);
 }
