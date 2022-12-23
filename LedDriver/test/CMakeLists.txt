@@ -12,6 +12,7 @@ set(EXTRA_COMPONENT_DIRS "../components")
 #
 set(TEST_COMPONENTS "ledDriver" CACHE STRING "led driver imp")
 set(TEST_COMPONENTS "runTimeErr" CACHE STRING "runTimeErr imp")
+set(TEST_COMPONENTS "runTimeErrStub" CACHE STRING "runTimeErrStub imp")
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(LedDriver_test)

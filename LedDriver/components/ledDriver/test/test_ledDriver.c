@@ -20,6 +20,7 @@
 #include <unity_fixture.h>
 #include "ledDriver.h"
 #include "runTimeErr.h"
+#include "runTimeErrStub.h"
 
 uint16_t virtualLed;
 
@@ -113,6 +114,7 @@ TEST(LedDriver, out_of_bound_turning_off_does_no_harm)
 TEST(LedDriver, out_of_bound_value_produces_run_time_error)
 {
     RUNTIME_ERROR("ohh", 1);
+    printhello();
 }
 
 
