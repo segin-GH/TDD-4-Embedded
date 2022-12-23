@@ -114,6 +114,7 @@ TEST(LedDriver, out_of_bound_turning_off_does_no_harm)
 IGNORE_TEST(LedDriver, out_of_bound_value_produces_run_time_error)
 {
     RUNTIME_ERROR("LED DRIVER: out-of-bounds LED",-1);
+
     ledDriverTurnON(-1);
     TEST_ASSERT_EQUAL_STRING("LED DRIVER: out-of-bounds LED",
          runTimeErrStub_getLastError());
