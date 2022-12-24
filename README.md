@@ -316,7 +316,7 @@ CMock is a powerful tool that can help you create more comprehensive and robust 
 If you don't know how to test a function you can use something like an executable reminder, this will help you not to forget that you have one test pending
 `IGNORE_TEST` here is an example:-
 
-```c
+```.c
 IGNORE_TEST(LedDriver, out_of_bound_value_produces_run_time_error)
 {
     RUNTIME_ERROR("LED DRIVER: out-of-bounds LED",-1);
