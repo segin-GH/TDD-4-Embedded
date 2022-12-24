@@ -94,3 +94,9 @@ bool ledDriverIsLedOff(int ledNumber)
 {
     return !ledDriverIsLedOn(ledNumber);
 }
+
+void ledDriverTurnAllOff(void)
+{
+    ledImg = ALL_LED_OFF;
+    updateHardware();
+}

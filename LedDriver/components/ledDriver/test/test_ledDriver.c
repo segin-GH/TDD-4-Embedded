@@ -27,7 +27,7 @@
 #include <unity_fixture.h>
 #include "ledDriver.h"
 // #include "runTimeErr.h"
-#include "runTimeErrStub.h"
+#include"runTimeErrStub.h"
 
 uint16_t virtualLed;
 
@@ -158,6 +158,12 @@ TEST(LedDriver, turn_off_multiple_led)
     TEST_ASSERT_EQUAL_HEX16((~0x180) & 0xffff, virtualLed);
 }
 
+TEST(LedDriver, turn_all_off)
+{
+    ledDriverTurnAllOn();
+    ledDriverTurnAllOff();
+    TEST_ASSERT_EQUAL_HEX16(0, virtualLed);
+}
 
 TEST_GROUP_RUNNER(LedDriver)
 {
@@ -176,4 +182,6 @@ TEST_GROUP_RUNNER(LedDriver)
     RUN_TEST_CASE(LedDriver, is_led_off);
     RUN_TEST_CASE(LedDriver, out_of_bound_leds_are_always_off);
     RUN_TEST_CASE(LedDriver, turn_off_multiple_led);
+    RUN_TEST_CASE(LedDriver, turn_all_off);
+
 }
