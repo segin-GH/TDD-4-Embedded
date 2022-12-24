@@ -120,18 +120,29 @@ Before we start writing a module let's figure out what test we need.
 #### Write a test list
 It is helpful to create a test list before developing new functionality the test list is derived from the requirements. the list defines your best vision of what it means to be done. the list does not need to be perfect.  It is a temporary doc for what needs to be done, it can be written in notepad, I usually write it on the test file as a comment 
 eg:-
-```
-/** @todo LED DRIVER TESTS
-*
-* //TODO are all led's off after init
-* //TODO a single led can be turned on
-* //TODO a single led can be turned off
-* //TODO Multiple led's can be turned on/off
-* //TODO Turn all led's on/off
-* //TODO Query Led state
-* //TODO check boundary value
-* //TODO check out-of-bound value
+```.c
+
+/** @todo LED DRIVER TESTS 
+
+*    TODO are all led's off after init
+*    TODO a single led can be turned on
+*    TODO a single led can be turned off
+*    TODO Multiple led's can be turned off
+*    TODO Multiple led's can be turned on
+*    TODO Turn all led's on
+*    TODO Turn all led's off
+*    TODO Query Led state
+*       TODO is led on
+*       TODO is led off
+*       TODO out-of-bound is on
+*       TODO out-of-bound is off
+*    TODO check boundary value
+*       TODO beyond Max Breaks nothing
+*       TODO under min breaks nothing
+*       TODO provides RunTime error
+        TODO what should really happen?
 */
+
 ``` 
 One key point is that write test first and then let it fail, then write production code to pass the test. (hint **Fake it until you make it**) 
 How will you make this function pass the test - **virtual led**
