@@ -35,7 +35,7 @@ to express how production code should behave.
 
 _*An example of a Test Harness  `unity`*_
 
-```
+```.c
 #include <stdio.h>
 #include <unity.h>
 
@@ -139,7 +139,7 @@ you just create a virtual led or hardcode the value, this can help you in two wa
 hardware connected to do unit tests.
 
 First Test
-```
+```.c
 TEST(LedDriver, are_all_the_led_off_after_init)
 {
     uint16_t virtualLed = 0xffff;
@@ -151,7 +151,7 @@ TEST(LedDriver, are_all_the_led_off_after_init)
 ```
 
 this will fail because our `ledDriverInit` is not implemented.
-```
+```.c
 void ledDriverInit(uint16_t *memoryMappedAddr)
 {
     //
@@ -159,7 +159,7 @@ void ledDriverInit(uint16_t *memoryMappedAddr)
 ```
 
 To make the test pass hardcode some value.
-```
+```.c
 static  uint16_t *virtualLed;
 
 void ledDriverInit(uint16_t *memoryMappedAddr)
@@ -202,7 +202,7 @@ For example, consider a program that needs to communicate with a database to ret
 In the context of C programming, a stub is simply a C function that is written to stand in for some other function or piece of code. It can be used in a variety of testing scenarios to simulate the behavior of real code and allow for testing to proceed.
 
 Here is an example of a stub function in C:
-```
+```.c
 #include <stdio.h>
 
 // Dummy function that stands in for a database connection
@@ -232,7 +232,7 @@ A mock is a type of test double (a simulated object used in place of a real obje
 In the context of C programming, a mock is simply a C function or object that is written to mimic the behavior of a real function or object in a controlled way. It is often used in conjunction with stubs to create more comprehensive and robust tests.
 
 Here is an example of a mock function in C:
-```
+```.c
 #include <stdio.h>
 
 // Mock function that stands in for a database connection
@@ -268,7 +268,7 @@ Here is an example of how you might use CMock to generate mock functions in a C 
 
 1.  First, create a header file that declares the functions that you want to mock. For example:
 
-```
+```.c
 #ifndef MOCK_FUNCTIONS_H
 #define MOCK_FUNCTIONS_H
 
@@ -281,7 +281,7 @@ int query_database(char* query);
 2.  Next, run CMock on the header file to generate the mock functions. This will typically involve running a command like `cmock --mock=mock_functions.h`. This will generate a file called `mock_functions.c` that contains the mock versions of the functions declared in the header file.
     
 3.  In your unit tests, include the generated `mock_functions.c` file and use the mock functions as needed. For example:
-```
+```.c
 #include "mock_functions.h"
 
 void test_database_connection() {
