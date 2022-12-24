@@ -20,17 +20,18 @@ void updateHardware()
     *virtualLedAddr = ledImg;
 }
 
-/* wrapper function for covert led number */
-static uint16_t convertLedNumToBit(int ledNumber)
-{
-    return 1 << (ledNumber - 1);
-}
-
+/* checks if the output input or the ledNumber is out-of-bound */
 static bool isLedOutOfBound(int ledNumber)
 {
     if((ledNumber < FIRST_LED) || (ledNumber > LAST_LED))
         return true;
     return false;
+}
+
+/* wrapper function for covert led number */
+static uint16_t convertLedNumToBit(int ledNumber)
+{
+    return 1 << (ledNumber - 1);
 }
 
 static void setLedImgBit(int ledNumber)
@@ -54,7 +55,7 @@ void ledDriverInit(uint16_t *memoryMappedAddr)
 /* clean up led driver after no use */
 void ledDriverDestroy(void)
 {
-    //
+    // destruction
 }
 
 
