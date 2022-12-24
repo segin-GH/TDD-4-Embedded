@@ -13,5 +13,6 @@ void ledDriverTurnON(int ledNumber);
 void ledDriverTurnOFF(int ledNumber);
 void ledDriverTurnAllOn();
 bool ledDriverIsLedOn(int ledNumber);
+bool ledDriverIsLedOff(int ledNumber);
 
 #endif /* LED_DRIVER_H */

@@ -135,6 +135,13 @@ TEST(LedDriver, is_led_on)
     TEST_ASSERT_TRUE(ledDriverIsLedOn(11));
 }
 
+TEST(LedDriver, is_led_off)
+{
+    TEST_ASSERT_TRUE(ledDriverIsLedOff(12));
+    ledDriverTurnON(12);
+    TEST_ASSERT_FALSE(ledDriverIsLedOff(12));
+}
+
 TEST_GROUP_RUNNER(LedDriver)
 {
     RUN_TEST_CASE(LedDriver, are_all_the_led_off_after_init);
@@ -149,4 +156,5 @@ TEST_GROUP_RUNNER(LedDriver)
     RUN_TEST_CASE(LedDriver, out_of_bound_turning_off_does_no_harm);
     RUN_TEST_CASE(LedDriver, out_of_bound_value_produces_run_time_error);
     RUN_TEST_CASE(LedDriver, is_led_on);
+    RUN_TEST_CASE(LedDriver, is_led_off);
 }

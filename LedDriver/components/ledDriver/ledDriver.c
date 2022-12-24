@@ -89,3 +89,8 @@ bool ledDriverIsLedOn(int ledNumber)
 {
     return ledImg & (convertLedNumToBit(ledNumber));
 }
+
+bool ledDriverIsLedOff(int ledNumber)
+{
+    return !ledDriverIsLedOn(ledNumber);
+}
