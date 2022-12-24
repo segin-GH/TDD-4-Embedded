@@ -10,17 +10,19 @@
 *    TODO a single led can be turned on
 *    TODO a single led can be turned off
 *    TODO Multiple led's can be turned off
-    TODO Multiple led's can be turned on
-    TODO Turn all led's on
-    TODO Turn all led's off
-    TODO Query Led state
-    TODO check boundary value
+*    TODO Multiple led's can be turned on
+*    TODO Turn all led's on
+*    TODO Turn all led's off
+*    TODO Query Led state
+*       TODO is led on
+*       TODO is led off
+*       TODO out-of-bound is on
+*       TODO out-of-bound is off
+*    TODO check boundary value
 *       TODO beyond Max Breaks nothing
 *       TODO under min breaks nothing
 *       TODO provides RunTime error
         TODO what should really happen?
-
-    TODO check out-of-bound value 
 */
 
 #include <unity.h>
