@@ -150,6 +150,15 @@ TEST(LedDriver, out_of_bound_leds_are_always_off)
     TEST_ASSERT_FALSE(ledDriverIsLedOn(17));
 }
 
+TEST(LedDriver, turn_off_multiple_led)
+{
+    ledDriverTurnAllOn();
+    ledDriverTurnOFF(9);
+    ledDriverTurnOFF(8);
+    TEST_ASSERT_EQUAL_HEX16((~0x180) & 0xffff, virtualLed);
+}
+
+
 TEST_GROUP_RUNNER(LedDriver)
 {
     RUN_TEST_CASE(LedDriver, are_all_the_led_off_after_init);
@@ -166,4 +175,5 @@ TEST_GROUP_RUNNER(LedDriver)
     RUN_TEST_CASE(LedDriver, is_led_on);
     RUN_TEST_CASE(LedDriver, is_led_off);
     RUN_TEST_CASE(LedDriver, out_of_bound_leds_are_always_off);
+    RUN_TEST_CASE(LedDriver, turn_off_multiple_led);
 }
