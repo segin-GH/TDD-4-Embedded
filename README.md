@@ -281,7 +281,7 @@ int query_database(char* query);
 2.  Next, run CMock on the header file to generate the mock functions. This will typically involve running a command like `cmock --mock=mock_functions.h`. This will generate a file called `mock_functions.c` that contains the mock versions of the functions declared in the header file.
     
 3.  In your unit tests, include the generated `mock_functions.c` file and use the mock functions as needed. For example:
-```
+```.c
 #include "mock_functions.h"
 
 void test_database_connection() {
