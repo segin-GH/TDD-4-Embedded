@@ -28,7 +28,6 @@
 #include <unity.h>
 #include <unity_fixture.h>
 #include "ledDriver.h"
-// #include "runTimeErr.h"
 #include"runTimeErrStub.h"
 
 uint16_t virtualLed;
