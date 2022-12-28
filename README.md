@@ -330,3 +330,32 @@ IGNORE_TEST(LedDriver, out_of_bound_value_produces_run_time_error)
 When you think you are done take a step back and look at your work and see whether
 there is any cleanup that you need to do.  After a quick review, the production code looks clean; functions are short and focused names are readable and we got rid of magic numbers as we proceed.
 How far to take the refactoring is a judgment call. The judgment should be based on detecting code smell and envisioning a better form for the code. 
+
+
+## Embedded TDD Strategy
+
+In the previous example shows how an [led driver](https://github.com/segin-GH/TDD-4-Embedded/tree/main/LedDriver) a hardware-dependent piece of code, is developed using TDD and tested off the target on the eval dev board you may wonder is this test even valid? when they are not even running on target hardware? the answer is they are valuable but along with benefits, some risks must be considered and contained.
+
+Testing off the target hardware also allows difficult-to-cause errors to be easily injected without this ability, a lot of code goes untested until the fateful day when the hardware error we anticipate occurs but the corrective action is wrong.
+
+#### The Target hardware bottleneck
+Most of the time concurrent hardware and software development is a reality for many embedded projects if the software can only run on target you will likely suffer unnecessarily from one or more of these time wasters
+ - Target hardware is not ready until late in the project, delaying software testing.
+ - Target hardware is expensive and scares This makes developers wait and build up mounds of unverified work
+ - when target hardware is finally ready it may have bugs of its own. the mound of untested software has its bugs too. Putting both of them together you get long days of debugging and plenty of finger-pointing.
+ - Long target builds and long target uploads take a lot of time.
+
+#### Dual-Targeting
+Dual targeting means that from day one your code is designed
+to run on at least two platforms the final target and a dev board or
+on a development system.
+The goal is not some esoteric or academic pursuit; it is a pragmatic technique to keep development going at a steady pace.
+
+#### Benefits of dual-targeting 
+
+- When you try to run newly written software on your embedded platform you are tackling many unknowns simultaneously.  A problem on the board, the microcontroller circuitry, or connectors can masquerade as a software bug; there if you can isolate your software before running it in your embedded platform we can figure out whether is the software the culprit or if it is a hardware issue.
+- It allows you to test the code before the hardware gets ready.
+- You can avoid hardware bottlenecks.
+- You can avoid simultaneous debugging of hardware and software.
+- Hardware independency will remove some of the burdens in future platform migrations. 
+- Hardware will change that's a given. When it does you better be prepared. having automated unit tests and code that already runs on multiple target platforms.
