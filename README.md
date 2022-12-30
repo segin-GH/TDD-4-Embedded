@@ -316,7 +316,7 @@ CMock is a powerful tool that can help you create more comprehensive and robust 
 If you don't know how to test a function you can use something like an executable reminder, this will help you not to forget that you have one test pending
 `IGNORE_TEST` here is an example:-
 
-```.c
+```c
 IGNORE_TEST(LedDriver, out_of_bound_value_produces_run_time_error)
 {
     RUNTIME_ERROR("LED DRIVER: out-of-bounds LED",-1);
@@ -339,15 +339,14 @@ In the previous example shows how an [led driver](https://github.com/segin-GH/TD
 Testing off the target hardware also allows difficult-to-cause errors to be easily injected without this ability, a lot of code goes untested until the fateful day when the hardware error we anticipate occurs but the corrective action is wrong.
 
 #### The Target hardware bottleneck
-Most of the time concurrent hardware and software development is a reality for many embedded projects if the software can only run on target you will likely suffer unnecessarily from one or more of these time wasters
+Most of the time concurrent hardware and software development is a reality for many embedded projects if the software can only run on target you will likely suffer unnecessarily from one or more of these time wasters.
  - Target hardware is not ready until late in the project, delaying software testing.
- - Target hardware is expensive and scares This makes developers wait and build up mounds of unverified work
+ - Target hardware is expensive and scares This makes developers wait and build up mounds of unverified work.
  - when target hardware is finally ready it may have bugs of its own. the mound of untested software has its bugs too. Putting both of them together you get long days of debugging and plenty of finger-pointing.
  - Long target builds and long target uploads take a lot of time.
 
 #### Dual-Targeting
-Dual targeting means that from day one your code is designed
-to run on at least two platforms the final target and a dev board or
+Dual targeting means that from day one your code is designed to run on at least two platforms the final target and a dev board or
 on a development system.
 The goal is not some esoteric or academic pursuit; it is a pragmatic technique to keep development going at a steady pace.
 
