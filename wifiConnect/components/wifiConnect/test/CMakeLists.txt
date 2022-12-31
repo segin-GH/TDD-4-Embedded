@@ -1,5 +1,6 @@
 idf_component_register(
-    SRCS "test_runner_main.c"
+    SRC_DIRS "."
     INCLUDE_DIRS "."
-    REQUIRES unity
+
+    REQUIRES cmock wifiConnect
     )

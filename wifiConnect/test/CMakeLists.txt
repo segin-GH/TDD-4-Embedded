@@ -1,3 +1,4 @@
+# This is the project CMakeLists.txt file for the test subproject
 cmake_minimum_required(VERSION 3.5)
 
 # Include the components directory of the main application:
@@ -9,7 +10,7 @@ set(EXTRA_COMPONENT_DIRS "../components")
 # - when invoking CMake directly: cmake -D TEST_COMPONENTS="xxxxx" ..
 # - when using idf.py: idf.py -T xxxxx build
 #
-set(TEST_COMPONENTS "wifi_connect" CACHE STRING "wrapper componet for wifi")
+set(TEST_COMPONENTS "wifiConnect" CACHE STRING "test wifi")
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-project(wifiConnect_wrapper_test)
+project(wifiConnect_test)
