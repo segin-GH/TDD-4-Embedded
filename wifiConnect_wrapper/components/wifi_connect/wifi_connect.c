@@ -3,5 +3,6 @@
 
 void func(void)
 {
+    printf("wifi connect works\n");
 
 }
