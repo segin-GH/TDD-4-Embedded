@@ -1,10 +1,16 @@
-#ifndef WIFI_CONNECT_H
-#define WIFI_CONNECT_H
+#pragma once
 
 #include <stdio.h>
 #include <esp_log.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 void init_wifi();
 
 
-#endif /* WIFI_CONNECT_H */
+#ifdef __cplusplus
+}
+#endif
