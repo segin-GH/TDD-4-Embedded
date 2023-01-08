@@ -358,3 +358,16 @@ The goal is not some esoteric or academic pursuit; it is a pragmatic technique t
 - You can avoid simultaneous debugging of hardware and software.
 - Hardware independency will remove some of the burdens in future platform migrations. 
 - Hardware will change that's a given. When it does you better be prepared. having automated unit tests and code that already runs on multiple target platforms.
+
+#### Risks of dual-targeting
+- compilers may support different language features.
+- The target compiler may have one set of bugs while the development-system has a different set of bugs.
+- the runtime libraries may be different.
+- the included file name and features may be different.
+- Primitive data types might have different sizes.
+- byte ordering and data structure alignments may be different.
+
+#### Testing with Hardware
+- Automated hardware test
+- Partialy automaated hardware test.
+- Automated hardware tests with external Instruments.
