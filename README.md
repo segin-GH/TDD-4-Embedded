@@ -267,7 +267,7 @@ int main() {
 ```
 In this example, the `connect_to_database` function is a mock that stands in for a real database connection. It checks the input values passed to it (the host, user, and password) and returns 0 if they are correct and -1 if they are incorrect. The `main` function calls the `connect_to_database` function and prints the result, which in this case would be 0.
 
-Mock objects can be used to simulate a wide range of behaviors and interactions, allowing you to thoroughly test the behavior of your code in a variety of different scenarios
+Mock objects can be used to simulate a wide range of behaviors and interactions, allowing you to thoroughly test the behavior of your code in a variety of different scenarios.
 
 #### what is Cmock?
 CMock is a tool that is used to generate mock functions for use in unit testing in the C programming language. It is designed to make it easier to create mock functions that can be used to test the behavior of C code in isolation from external dependencies.
@@ -313,7 +313,7 @@ CMock is a powerful tool that can help you create more comprehensive and robust 
 
 #### Executable Reminders
 
-If you don't know how to test a function you can use something like an executable reminder, this will help you not to forget that you have one test pending
+If you don't know how to test a function you can use something like an executable reminder, this will help you not to forget that you have one test pending.
 `IGNORE_TEST` here is an example:-
 
 ```c
