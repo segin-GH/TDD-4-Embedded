@@ -374,3 +374,6 @@ The goal is not some esoteric or academic pursuit; it is a pragmatic technique t
 
 ##### AUTOMATED HARDWARE TEST
 Your embedded hardware will have areas that are well-suited for automated testing other areas of hardware will probably need a special instrument to test the hardware functionality where possible you should write a test that helps you learn what the hardware does and give you confidence that the hardware is working.
+##### PARTIALLY AUTOMATED HARDWARE TEST
+The ledDriver example shows how a hardware-dependent code can be tested outside of the target but how do you know it turns on the right led? this is a good example where we can do a partially automated test in partially automated test displays a cue prompting the operator to manually interact with the system output, in this case, we would verify that a specific LED is either on or off this would be reapeted with every led.  this could also be part of the builtin test that can be shipped with the product.
+
