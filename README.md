@@ -368,6 +368,9 @@ The goal is not some esoteric or academic pursuit; it is a pragmatic technique t
 - byte ordering and data structure alignments may be different.
 
 #### Testing with Hardware
-- Automated hardware test
+- Automated hardware test.
 - Partialy automaated hardware test.
-- Automated hardware tests with external Instruments.
+- Automated hardware tests with external Instruments.-
+
+##### AUTOMATED HARDWARE TEST
+Your embedded hardware will have areas that are well-suited for automated testing other areas of hardware will probably need a special instrument to test the hardware functionality where possible you should write a test that helps you learn what the hardware does and give you confidence that the hardware is working.
