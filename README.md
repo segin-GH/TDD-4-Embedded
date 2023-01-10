@@ -377,3 +377,6 @@ Your embedded hardware will have areas that are well-suited for automated testin
 ##### PARTIALLY AUTOMATED HARDWARE TEST
 The ledDriver example shows how a hardware-dependent code can be tested outside of the target but how do you know it turns on the right led? this is a good example where we can do a partially automated test in partially automated test displays a cue prompting the operator to manually interact with the system output, in this case, we would verify that a specific LED is either on or off this would be reapeted with every led.  this could also be part of the builtin test that can be shipped with the product.
 
+
+##### AUTOMATED HARDWARE TEST WITH EXTERNAL INSTRUMENTS
+These kinds of tests are done with external instruments like function generators so rather than manually pressing buttons to test the device using the full capability of the device by using its Serial port to automatically send data can be good when we have to do repetitive work this can be useful since humans tend to make errors all the time.
