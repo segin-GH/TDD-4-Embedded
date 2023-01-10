@@ -367,7 +367,7 @@ The goal is not some esoteric or academic pursuit; it is a pragmatic technique t
 - Primitive data types might have different sizes.
 - byte ordering and data structure alignments may be different.
 
-#### Testing with Hardware
+### Testing with Hardware
 - Automated hardware test.
 - Partialy automaated hardware test.
 - Automated hardware tests with external Instruments.-
