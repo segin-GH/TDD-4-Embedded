@@ -267,7 +267,7 @@ int main() {
 ```
 In this example, the `connect_to_database` function is a mock that stands in for a real database connection. It checks the input values passed to it (the host, user, and password) and returns 0 if they are correct and -1 if they are incorrect. The `main` function calls the `connect_to_database` function and prints the result, which in this case would be 0.
 
-Mock objects can be used to simulate a wide range of behaviors and interactions, allowing you to thoroughly test the behavior of your code in a variety of different scenarios
+Mock objects can be used to simulate a wide range of behaviors and interactions, allowing you to thoroughly test the behavior of your code in a variety of different scenarios.
 
 #### what is Cmock?
 CMock is a tool that is used to generate mock functions for use in unit testing in the C programming language. It is designed to make it easier to create mock functions that can be used to test the behavior of C code in isolation from external dependencies.
@@ -313,7 +313,7 @@ CMock is a powerful tool that can help you create more comprehensive and robust 
 
 #### Executable Reminders
 
-If you don't know how to test a function you can use something like an executable reminder, this will help you not to forget that you have one test pending
+If you don't know how to test a function you can use something like an executable reminder, this will help you not to forget that you have one test pending.
 `IGNORE_TEST` here is an example:-
 
 ```c
@@ -358,3 +358,25 @@ The goal is not some esoteric or academic pursuit; it is a pragmatic technique t
 - You can avoid simultaneous debugging of hardware and software.
 - Hardware independency will remove some of the burdens in future platform migrations. 
 - Hardware will change that's a given. When it does you better be prepared. having automated unit tests and code that already runs on multiple target platforms.
+
+#### Risks of dual-targeting
+- compilers may support different language features.
+- The target compiler may have one set of bugs while the development-system has a different set of bugs.
+- the runtime libraries may be different.
+- the included file name and features may be different.
+- Primitive data types might have different sizes.
+- byte ordering and data structure alignments may be different.
+
+### Testing with Hardware
+- Automated hardware test.
+- Partialy automaated hardware test.
+- Automated hardware tests with external Instruments.-
+
+##### AUTOMATED HARDWARE TEST
+Your embedded hardware will have areas that are well-suited for automated testing other areas of hardware will probably need a special instrument to test the hardware functionality where possible you should write a test that helps you learn what the hardware does and give you confidence that the hardware is working. These tests are automaticaly done.
+##### PARTIALLY AUTOMATED HARDWARE TEST
+The ledDriver example shows how a hardware-dependent code can be tested outside of the target but how do you know it turns on the right led? this is a good example where we can do a partially automated test in partially automated test displays a cue prompting the operator to manually interact with the system output, in this case, we would verify that a specific LED is either on or off this would be reapeted with every led.  this could also be part of the builtin test that can be shipped with the product.
+
+
+##### AUTOMATED HARDWARE TEST WITH EXTERNAL INSTRUMENTS
+These kinds of tests are done with external instruments like function generators so rather than manually pressing buttons to test the device using the full capability of the device by using its Serial port to automatically send data can be good when we have to do repetitive work this can be useful since humans tend to make errors all the time.
