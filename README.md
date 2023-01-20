@@ -369,7 +369,7 @@ The goal is not some esoteric or academic pursuit; it is a pragmatic technique t
 
 ### Testing with Hardware
 - Automated hardware test.
-- Partialy automaated hardware test.
+- Partialy automated hardware test.
 - Automated hardware tests with external Instruments.-
 
 ##### AUTOMATED HARDWARE TEST
