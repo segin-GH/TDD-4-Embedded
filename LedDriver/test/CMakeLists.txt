@@ -10,6 +10,7 @@ set(EXTRA_COMPONENT_DIRS "../components")
 # - when invoking CMake directly: cmake -D TEST_COMPONENTS="xxxxx" ..
 # - when using idf.py: idf.py -T xxxxx build
 #
+
 set(TEST_COMPONENTS "ledDriver" CACHE STRING "led driver imp")
 set(TEST_COMPONENTS "runTimeErr" CACHE STRING "runTimeErr imp")
 set(TEST_COMPONENTS "runTimeErrStub" CACHE STRING "runTimeErrStub imp")

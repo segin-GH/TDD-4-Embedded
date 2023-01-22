@@ -1,7 +1,7 @@
 idf_component_register(
-    SRCS "test_runner_main.c"
-    INCLUDE_DIRS "."
-    REQUIRES unity
-    INCLUDE_DIRS /home/bot/esp/esp-idf/components/unity/unity/extras/fixture/src
+    srcs "test_runner_main.c"
+    include_dirs "."
+    requires unity
+    include_dirs /home/bot/esp/esp-idf/components/unity/unity/extras/fixture/src
     
     )

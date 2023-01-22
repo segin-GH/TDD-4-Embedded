@@ -21,7 +21,8 @@
                     "${workspaceFolder}"
                 ],
                 "limitSymbolsToIncludedHeaders": false
-            }
+            },
+            "compileCommands": "${workspaceFolder}/test/build/compile_commands.json"
         }
     ],
     "version": 4
