@@ -1,5 +1,0 @@
-build/
-Makefile
-.vscode/
-.git
-test/build/*
