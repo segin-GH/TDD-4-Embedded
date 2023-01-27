@@ -351,22 +351,6 @@ on a development system.
 The goal is not some esoteric or academic pursuit; it is a pragmatic technique to keep development going at a steady pace.
 
 
-## Introducing Test Doubles
-
-### Collaborators
-A collaborator is some function, data, module, or device outside the code under test (CUT) that the (CUT) depends upon
-### Test Doubles
-A test double impersonates some function, data, module, or a lib during a test the CUT does not know it is using a test double
-
-### When to use a Test double
-* hardware independence
-* inject difficult-to-produce inputs
-* speed up a slow collaborator
-* Dependency on something volatile (eg clock)
-* Dependency on something under development
-* Dependency on something difficult to configure
-
-
 #### Benefits of dual-targeting 
 
 - When you try to run newly written software on your embedded platform you are tackling many unknowns simultaneously.  A problem on the board, the microcontroller circuitry, or connectors can masquerade as a software bug; there if you can isolate your software before running it in your embedded platform we can figure out whether is the software the culprit or if it is a hardware issue.
@@ -397,3 +381,20 @@ The ledDriver example shows how a hardware-dependent code can be tested outside 
 
 ##### AUTOMATED HARDWARE TEST WITH EXTERNAL INSTRUMENTS
 These kinds of tests are done with external instruments like function generators so rather than manually pressing buttons to test the device using the full capability of the device by using its Serial port to automatically send data can be good when we have to do repetitive work this can be useful since humans tend to make errors all the time.
+
+
+
+## Introducing Test Doubles
+
+### Collaborators
+A collaborator is some function, data, module, or device outside the code under test (CUT) that the (CUT) depends upon
+### Test Doubles
+A test double impersonates some function, data, module, or a lib during a test the CUT does not know it is using a test double
+
+### When to use a Test double
+* hardware independence
+* inject difficult-to-produce inputs
+* speed up a slow collaborator
+* Dependency on something volatile (eg clock)
+* Dependency on something under development
+* Dependency on something difficult to configure
