@@ -2,6 +2,6 @@
 
 void func(void)
 {
-    printf("lightschdeuler")
+    printf("lightscheduler\n");
 
 }

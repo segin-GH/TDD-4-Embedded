@@ -5,4 +5,5 @@
 void app_main(void)
 {
     printf("HelloWorld\n");
+    func();
 }

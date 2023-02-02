@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-
+void func(void);
 
 
 
