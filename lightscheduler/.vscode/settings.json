@@ -11,6 +11,10 @@
     "idf.pythonBinPath": "/home/bot/.espressif/python_env/idf4.4_py3.10_env/bin/python",
     "idf.toolsPath": "/home/bot/.espressif",
     "files.associations": {
-        "lightscheduler.h": "c"
+        "lightscheduler.h": "c",
+        "iostream": "c",
+        "bitset": "c",
+        "chrono": "c",
+        "algorithm": "c"
     }
 }
