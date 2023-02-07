@@ -387,14 +387,14 @@ These kinds of tests are done with external instruments like function generators
 ## Introducing Test Doubles
 
 ### Collaborators
-A collaborator is some function, data, module, or device outside the code under test (CUT) that the (CUT) depends upon
+A collaborator is some function, data, module, or device outside the code under test (CUT) that the (CUT) depends upon.
 ### Test Doubles
-A test double impersonates some function, data, module, or a lib during a test the CUT does not know it is using a test double
+A test double impersonates some function, data, module, or a lib during a test the CUT does not know it is using a test double.
 
 ### When to use a Test double
-* hardware independence
-* inject difficult-to-produce inputs
-* speed up a slow collaborator
-* Dependency on something volatile (eg clock)
-* Dependency on something under development
-* Dependency on something difficult to configure
+* hardware independence.
+* inject difficult-to-produce inputs.
+* speed up a slow collaborator.
+* Dependency on something volatile (eg clock).
+* Dependency on something under development.
+* Dependency on something difficult to configure.
